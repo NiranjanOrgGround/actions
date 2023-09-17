@@ -1,31 +1,29 @@
 name: CI
 
 on:
-  workflow_dispatch
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: checkout the repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v2
 
-      - name: Building the app
-        run: echo "The application is build" > artifact.txt
+      - name: Simulate a Build
+        run: echo 'hello youtube' > output.txt
         
-      - name: upload the artifact
-        uses: actions/upload-artifact@v3.1.3
-        with:
-          name: myArtifact
-          path: ${{ github.workspace }}/*.txt
-
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v2.2.4
+        with:          
+          name: 'your-artifact-name'
+          path: 'output.txt'
+          
       - name: Create an issue
-        uses: JasonEtco/create-an-issue@v2.9.1
+        uses: JasonEtco/create-an-issue@v2.6.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          RUNNUMBER: ${{ github.run_number }}
           ENVIRONMENT: Dev
-        with:
-          assignees: ${{ github.actor }}
+          RUNNUMBER: ${{ github.run_number  }}
+        with:         
           filename: .github/deployment-approval.md
-      
