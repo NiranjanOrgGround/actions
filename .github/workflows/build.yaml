@@ -27,4 +27,4 @@ jobs:
           ENVIRONMENT: Dev
           RUNNUMBER: ${{ github.run_number  }}
         with:         
-          filename: /.github/ISSUE_TEMPLATE.md
+          filename: .github/ISSUE_TEMPLATE/deployment-approval-required-for----env-environment---.md
