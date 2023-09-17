@@ -1,6 +1,8 @@
 ---
-title: Deployment Approval Required for {{ env.ENVIRONMENT }}
+name: Approval for Deployment
+title: "Deployment Approval Required for {{ env.ENVIRONMENT }}"
 labels: deployment-requested
+assignees: niranjanakoni
 ---
 
 Deployment Approval requested from {{ payload.sender.login }}.
