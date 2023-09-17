@@ -1,6 +1,7 @@
 name: CI
 
 on:
+  push:
   workflow_dispatch:
 
 jobs:
@@ -24,6 +25,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ENVIRONMENT: Dev
-          RUNNUMBER: ${{ github.run_number  }}
+          RUNNUMBER: ${{ github.run.number  }}
         with:         
           filename: .github/deployment-approval.md
