@@ -9,22 +9,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4.0.0
 
       - name: Simulate a Build
         run: echo 'hello youtube' > output.txt
         
       - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v2.2.4
+        uses: actions/upload-artifact@v3.1.3
         with:          
           name: 'your-artifact-name'
           path: 'output.txt'
           
       - name: Create an issue
-        uses: JasonEtco/create-an-issue@v2.6.0
+        uses: JasonEtco/create-an-issue@v2.9.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ENVIRONMENT: Dev
-          RUNNUMBER: ${{ github.run.number  }}
+          RUNNUMBER: ${{ github.run_number  }}
         with:         
           filename: .github/deployment-approval.md
