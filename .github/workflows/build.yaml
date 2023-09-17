@@ -13,3 +13,8 @@ jobs:
       - name: Building the app
         run: echo "The application is build" > artifact.txt
         
+      - name: upload the artifact
+        uses: actions/upload-artifact@v3.1.3
+        with:
+          name: myArtifact
+          path: ${{ github.workspace }}
