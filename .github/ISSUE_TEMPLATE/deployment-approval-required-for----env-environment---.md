@@ -1,7 +1,7 @@
 ---
 name: Deployment Approval 
 about: Deployment Approval
-title: 'Deployment Approval Required for {{ env.ENVIRONMENT }}'
+title: 'Deployment Approval Required for ${{ env.ENVIRONMENT }}'
 labels: deployment-requested
 assignees: niranjanakoni
 
