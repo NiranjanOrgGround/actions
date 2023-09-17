@@ -1,10 +1,6 @@
 ---
-name: Deployment Approval 
-about: Deployment Approval
 title: 'Deployment Approval Required'
-labels: deployment-requested
-assignees: niranjanakoni
-
+labels: 'deployment-requested'
 ---
 <!--
 Deployment Approval requested from {{ payload.sender.login }}.
