@@ -1,9 +1,9 @@
 ---
-title: Deployment Approval Required for {{ env.ENVIRONMENT }}
+title: Deployment Approval Required for ${{ env.ENVIRONMENT }}
 labels: deployment-requested
 ---
 
-Deployment Approval requested from {{ payload.sender.login }}.
+Deployment Approval requested from ${{ payload.sender.login }}.
 
 Comment "Approved" to kick the deployment off.
 
